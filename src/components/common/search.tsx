@@ -89,7 +89,7 @@ const Search = React.forwardRef<HTMLDivElement, Props>(
           {searchText && (
             <div className="w-full absolute top-[56px] start-0 py-2.5 bg-skin-fill rounded-md flex flex-col overflow-hidden shadow-dropDown z-30">
               <Scrollbar className="os-host-flexbox">
-                <div className="w-full h-[380px]">
+                <div className="w-full h-full max-h-[360px]">
                   {isLoading
                     ? Array.from({ length: 15 }).map((_, idx) => (
                         <div

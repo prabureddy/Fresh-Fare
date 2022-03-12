@@ -1,0 +1,106 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://root:root@maincluster.s73mn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+}
+
+// model Attachment {
+//   id        String     @id @default(auto()) @map("_id") @db.ObjectId
+//   thumbnail String
+//   original  String
+//   Category  Category[]
+//   Product   Product[]
+// }
+
+// model Gallery {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   thumbnail String
+//   original  String
+//   Product   Product? @relation(fields: [productId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+//   productId String?  @db.ObjectId
+// }
+
+// model Category {
+//   id           String     @id @default(auto()) @map("_id") @db.ObjectId
+//   name         String
+//   slug         String
+//   details      String?
+//   image        Json
+//   icon         String?
+//   children     Category[] @relation("CategoryToCategory")
+//   products     Product[]
+//   productCount Int?
+//   attachmentId String?    @db.ObjectId
+//   Category     Category?  @relation("CategoryToCategory", fields: [categoryId], references: [id])
+//   categoryId   String?    @db.ObjectId
+// }
+
+// model Tag {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   name      String
+//   slug      String
+//   Product   Product? @relation(fields: [productId], references: [id])
+//   productId String?  @db.ObjectId
+// }
+
+model Product {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  name              String
+  slug              String
+  price             Float?
+  quantity          Int?
+  unit              String?
+  sold              Int?
+  sale_price        Float?
+  min_price         Float?
+  max_price         Float?
+  image             Json
+  sku               String?
+  gallery           Json[]
+  category          Json?
+  tag               Json[]
+  variations        Json?
+  description       String
+  variation_options Json?
+  product_type      String?
+}
+
+// model OrderItem {
+//   id       String  @id @default(auto()) @map("_id") @db.ObjectId
+//   name     String
+//   price    Int
+//   quantity Int
+//   Order    Order?  @relation(fields: [orderId], references: [id])
+//   orderId  String? @db.ObjectId
+// }
+
+// model customer {
+//   id       String  @id @default(auto()) @map("_id") @db.ObjectId
+//   name     String?
+//   email    String?
+//   phone    String?
+//   address  String?
+//   city     String?
+//   state    String?
+//   zip      String?
+//   country  String?
+//   password String?
+//   Order    Order[]
+// }
+
+model Order {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  slug            String
+  products        Json[]
+  toal            Int
+  tracking_number String
+  customer        Json
+}

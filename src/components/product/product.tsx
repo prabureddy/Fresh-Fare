@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '@components/ui/button';
 import Counter from '@components/ui/counter';
 import { useRouter } from 'next/router';
@@ -24,6 +24,7 @@ import SocialShareBox from '@components/ui/social-share-box';
 import ProductDetailsTab from '@components/product/product-details/product-tab';
 import VariationPrice from './variation-price';
 import isEqual from 'lodash/isEqual';
+import { useLocalStorage } from '@utils/use-local-storage';
 
 const ProductSingleDetails: React.FC = () => {
   const { t } = useTranslation('common');
@@ -41,6 +42,10 @@ const ProductSingleDetails: React.FC = () => {
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
   const [addToWishlistLoader, setAddToWishlistLoader] =
     useState<boolean>(false);
+  const [allWishlist, setAllWishlist] = useLocalStorage<any>(
+    `freshfare-wishlist`,
+    JSON.stringify([])
+  );
   const [shareButtonStatus, setShareButtonStatus] = useState<boolean>(false);
   const productUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${ROUTES.PRODUCT}/${router.query.slug}`;
   const { price, basePrice, discount } = usePrice(
@@ -53,6 +58,9 @@ const ProductSingleDetails: React.FC = () => {
   const handleChange = () => {
     setShareButtonStatus(!shareButtonStatus);
   };
+  useEffect(() => {
+    setFavorite(JSON.parse(allWishlist).some((a: any) => a === data?.id));
+  }, [allWishlist, data?.id]);
   if (isLoading) return <p>Loading...</p>;
   const variations = getVariations(data?.variations);
 
@@ -97,7 +105,17 @@ const ProductSingleDetails: React.FC = () => {
   function addToWishlist() {
     // to show btn feedback while product wishlist
     setAddToWishlistLoader(true);
-    setFavorite(!favorite);
+    if (favorite) {
+      setAllWishlist(
+        JSON.stringify(
+          JSON.parse(allWishlist).filter((a: any) => a !== data?.id)
+        )
+      );
+      setFavorite(false);
+    } else {
+      setAllWishlist(JSON.stringify([...JSON.parse(allWishlist), data?.id]));
+      setFavorite(true);
+    }
     const toastStatus: string =
       favorite === true ? t('text-remove-favorite') : t('text-added-favorite');
     setTimeout(() => {

@@ -4,7 +4,7 @@ import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import { useQuery } from 'react-query';
 
 export const fetchProduct = async (_slug: string) => {
-  const { data } = await http.get(`${API_ENDPOINTS.PRODUCT}`);
+  const { data } = await http.get(`${API_ENDPOINTS.PRODUCT}/${_slug}`);
   return data;
 };
 export const useProductQuery = (slug: string) => {

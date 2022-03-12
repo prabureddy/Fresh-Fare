@@ -153,13 +153,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
               </div>
             </div>
           </form>
-          <div className="flex flex-col items-center justify-center relative text-sm">
+          {/* <div className="flex flex-col items-center justify-center relative text-sm">
             <span className="mt-6 text-sm text-skin-base opacity-70">
               {t('common:text-or')}
             </span>
-          </div>
+          </div> */}
 
-          <div className="flex justify-center mt-5 space-x-2.5">
+          {/* <div className="flex justify-center mt-5 space-x-2.5">
             <button
               className="group flex items-center justify-center cursor-pointer h-10 w-10 rounded-full border border-skin-one hover:border-skin-primary transition-all focus:border-skin-primary focus:text-skin-primary focus:outline-none"
               onClick={handelSocialLogin}
@@ -178,7 +178,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
             >
               <FaLinkedinIn className="h-4 w-4 text-skin-base text-opacity-50 transition-all group-hover:text-skin-primary" />
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

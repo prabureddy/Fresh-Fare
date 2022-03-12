@@ -58,19 +58,6 @@ export type Collection = {
   products?: Product[];
   productCount?: number;
 };
-export type Brand = {
-  id: number | string;
-  name: string;
-  slug: string;
-  image?: Attachment;
-  [key: string]: unknown;
-};
-export type Dietary = {
-  id: number | string;
-  name: string;
-  slug: string;
-  [key: string]: unknown;
-};
 export type Tag = {
   id: string | number;
   name: string;
@@ -93,7 +80,6 @@ export type Product = {
   category?: Category;
   tag?: Tag[];
   meta?: any[];
-  brand?: Brand;
   description?: string;
   variations?: object;
   [key: string]: unknown;

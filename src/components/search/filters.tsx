@@ -1,10 +1,8 @@
 import { CategoryFilter } from './category-filter';
-import { BrandFilter } from './brand-filter';
 import { FilteredItem } from './filtered-item';
 import { useRouter } from 'next/router';
 import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
-import { DietaryFilter } from '@components/search/dietary-filter';
 import Heading from '@components/ui/heading';
 
 export const ShopFilters: React.FC = () => {
@@ -48,8 +46,6 @@ export const ShopFilters: React.FC = () => {
       )}
 
       <CategoryFilter />
-      <DietaryFilter />
-      <BrandFilter />
     </div>
   );
 };

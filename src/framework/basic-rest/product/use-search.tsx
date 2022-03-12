@@ -5,7 +5,8 @@ import { useQuery } from 'react-query';
 
 export const fetchSearchedProducts = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;
-  const { data } = await http.get(API_ENDPOINTS.SEARCH);
+  if (!_params.text) return [];
+  const { data } = await http.get(`${API_ENDPOINTS.SEARCH}?q=${_params.text}`);
   return data;
 };
 export const useSearchQuery = (options: QueryOptionsType) => {
