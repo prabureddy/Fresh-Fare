@@ -8,10 +8,11 @@ interface SwitchProps {
   onChange?: (value: boolean) => void;
 }
 
-const SwitchComponent: React.FC<SwitchProps> = (
-  { srText = 'toggle', checked, onChange },
-  ref
-) => {
+const SwitchComponent: React.FC<SwitchProps> = ({
+  srText = 'toggle',
+  checked,
+  onChange,
+}) => {
   const { locale } = useRouter();
   const dir = getDirection(locale);
   return (
@@ -19,7 +20,6 @@ const SwitchComponent: React.FC<SwitchProps> = (
       checked={checked!}
       onChange={onChange!}
       type="button"
-      ref={ref}
       className={`${checked ? 'bg-skin-primary' : 'bg-skin-button-hover '}
           relative inline-flex flex-shrink-0 h-6 lg:h-7 w-10 lg:w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75 focus:border-skin-primary`}
     >

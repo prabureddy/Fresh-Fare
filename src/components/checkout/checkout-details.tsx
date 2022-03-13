@@ -15,31 +15,31 @@ const data = [
     title: 'text-delivery-address',
     component: <Address />,
   },
-  {
-    id: 2,
-    title: 'text-delivery-schedule',
-    component: <DeliverySchedule />,
-  },
+  // {
+  //   id: 2,
+  //   title: 'text-delivery-schedule',
+  //   component: <DeliverySchedule />,
+  // },
   {
     id: 3,
     title: 'text-contact-number',
     component: <Contact />,
   },
-  {
-    id: 4,
-    title: 'text-payment-option',
-    component: <StripeCheckoutInlineForm />,
-  },
+  // {
+  //   id: 4,
+  //   title: 'text-payment-option',
+  //   component: <StripeCheckoutInlineForm />,
+  // },
   {
     id: 5,
     title: 'text-delivery-instructions',
     component: <DeliveryNotes />,
   },
-  {
-    id: 6,
-    title: 'text-delivery-tip',
-    component: <DeliveryTips />,
-  },
+  // {
+  //   id: 6,
+  //   title: 'text-delivery-tip',
+  //   component: <DeliveryTips />,
+  // },
 ];
 
 const CheckoutDetails: React.FC = () => {

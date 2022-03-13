@@ -50,6 +50,16 @@ datasource db {
 //   productId String?  @db.ObjectId
 // }
 
+model User {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String?
+  email       String?
+  password    String?
+  firstName   String?
+  lastName    String?
+  phoneNumber String?
+}
+
 model Product {
   id                String  @id @default(auto()) @map("_id") @db.ObjectId
   name              String

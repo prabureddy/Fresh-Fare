@@ -59,7 +59,7 @@ const AddAddressForm: React.FC = () => {
           />
         </div>
         <div className="grid grid-cols-1 mb-6 gap-7">
-          <Map
+          {/* <Map
             lat={data?.address?.lat || 1.295831}
             lng={data?.address?.lng || 103.76261}
             height={'420px'}
@@ -68,7 +68,7 @@ const AddAddressForm: React.FC = () => {
             mapCurrentPosition={(value: string) =>
               setValue('formatted_address', value)
             }
-          />
+          /> */}
           <TextArea
             label="Address"
             {...register('formatted_address', {

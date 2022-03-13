@@ -73,7 +73,7 @@ const AccountDetails: React.FC = () => {
             </div>
           </div>
         </div>
-        <Heading
+        {/* <Heading
           variant="titleLarge"
           className="mb-5 xl:mb-8 pt-6 md:pt-7 lg:pt-8"
         >
@@ -158,7 +158,7 @@ const AccountDetails: React.FC = () => {
               )}
             />
           </div>
-        </div>
+        </div> */}
         <div className="relative flex sm:ms-auto mt-5 pb-2 lg:pb-0">
           <Button
             type="submit"
