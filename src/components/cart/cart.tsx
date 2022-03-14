@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Scrollbar from '@components/ui/scrollbar';
 import { useCart } from '@contexts/cart/cart.context';
 import { useUI } from '@contexts/ui.context';
@@ -12,15 +13,30 @@ import { useTranslation } from 'next-i18next';
 import Heading from '@components/ui/heading';
 import Text from '@components/ui/text';
 import DeleteIcon from '@components/icons/delete-icon';
+import { useModalAction } from '@components/common/modal/modal.context';
+import Button from '@components/ui/button';
 
 export default function Cart() {
   const { t } = useTranslation('common');
-  const { closeDrawer } = useUI();
+  const { closeDrawer, isAuthorized } = useUI();
   const { items, total, isEmpty, resetCart } = useCart();
   const { price: cartTotal } = usePrice({
     amount: total,
     currencyCode: 'INR',
   });
+  const router = useRouter();
+  const { openModal } = useModalAction();
+  const handlerCheckUser = () => {
+    if (isAuthorized) {
+      if (isEmpty === false) {
+        router.push(ROUTES.CHECKOUT);
+      } else {
+        router.push(ROUTES.HOME);
+      }
+      return;
+    }
+    openModal('LOGIN_VIEW');
+  };
   return (
     <div className="flex flex-col w-full h-full justify-between">
       <div className="w-full flex justify-between items-center relative ps-5 md:ps-7 border-b border-skin-base">
@@ -70,8 +86,9 @@ export default function Cart() {
           </div>
         </div>
         <div className="flex flex-col" onClick={closeDrawer}>
-          <Link
-            href={isEmpty === false ? ROUTES.CHECKOUT : '/'}
+          <Button
+            onClick={handlerCheckUser}
+            // href={isEmpty === false ? ROUTES.CHECKOUT : '/'}
             className={cn(
               'w-full px-5 py-3 md:py-4 flex items-center justify-center bg-heading rounded font-semibold text-sm sm:text-15px text-skin-inverted bg-skin-primary focus:outline-none transition duration-300 hover:bg-opacity-90',
               {
@@ -81,7 +98,7 @@ export default function Cart() {
             )}
           >
             <span className="py-0.5">{t('text-proceed-to-checkout')}</span>
-          </Link>
+          </Button>
         </div>
       </div>
     </div>

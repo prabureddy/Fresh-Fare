@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next';
 
 const DeliveryAddresses: React.FC = () => {
   const { t } = useTranslation('common');
-  let { data, isLoading } = useAddressQuery();
+  let { data, isLoading, refetch } = useAddressQuery();
   const { closeModal } = useModalAction();
   if (isLoading) {
     return <div>Loading...</div>;
@@ -19,7 +19,7 @@ const DeliveryAddresses: React.FC = () => {
         <Heading variant="title" className="mb-8 -mt-1.5">
           {t('text-delivery-address')}
         </Heading>
-        <AddressGrid address={data?.data} />
+        <AddressGrid address={data?.data} fetchAdress={refetch} />
       </div>
     </div>
   );

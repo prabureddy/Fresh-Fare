@@ -25,6 +25,18 @@ const AddAddressForm: React.FC = () => {
 
   function onSubmit(values: ContactFormValues, e: any) {
     console.log(values, 'Add Address');
+    const updatedAdd = {
+      id: Math.random().toString(16).slice(2),
+      title: values.title,
+      default: values.default,
+      address: {
+        lat: values.lat,
+        lng: values.lng,
+        formatted_address: values.formatted_address,
+      },
+    };
+    data.onSave(updatedAdd);
+    closeModal();
   }
 
   const {

@@ -3,11 +3,10 @@ import { USFlag } from '@components/icons/language/USFlag';
 
 export const siteSettings = {
   name: 'FreshFare',
-  description:
-    'Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.',
+  description: 'Buy Groceries with the best price available.',
   author: {
     name: 'Fresh Fare',
-    websiteUrl: 'https://redq.io',
+    websiteUrl: 'https://fresh-fare.vercel.app',
     address: '',
   },
   logo: {

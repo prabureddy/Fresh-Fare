@@ -7,7 +7,7 @@ import { GetStaticProps } from 'next';
 import Seo from '@components/seo/seo';
 
 export default function AccountDetailsPage() {
-  let { data, isLoading } = useAddressQuery();
+  let { data, isLoading, refetch } = useAddressQuery();
   return (
     <>
       <Seo
@@ -17,7 +17,7 @@ export default function AccountDetailsPage() {
       />
       <AccountLayout>
         {!isLoading ? (
-          <AddressGrid address={data?.data} />
+          <AddressGrid address={data?.data} fetchAdress={refetch} />
         ) : (
           <div>Loading...</div>
         )}

@@ -6,18 +6,45 @@ import { useModalAction } from '@components/common/modal/modal.context';
 import { formatAddress } from '@utils/format-address';
 import Button from '@components/ui/button';
 import { useTranslation } from 'next-i18next';
+import { useAddressMutation } from '../../framework/basic-rest/address/use-address';
 
-const AddressGrid: React.FC<{ address?: any }> = ({ address }) => {
+const AddressGrid: React.FC<{ address?: any; fetchAdress?: () => void }> = ({
+  address,
+  fetchAdress,
+}) => {
   const { t } = useTranslation('common');
   const { openModal } = useModalAction();
-
-  function handlePopupView(item: any) {
-    openModal('ADDRESS_VIEW_AND_EDIT', item);
-  }
-
+  const { mutateAsync: login, isLoading } = useAddressMutation();
   address = address || [];
 
+  function handlePopupView(item: any) {
+    const newAddress = address.filter((a: any) => a.id !== item.id);
+    openModal('ADDRESS_VIEW_AND_EDIT', {
+      ...item,
+      onSave: (item: any) => {
+        newAddress.push(item);
+        address = [...newAddress];
+        handlerSaveAddress();
+      },
+    });
+  }
+  console.log(address, 'address');
+
+
   const [selected, setSelected] = useState(address[0]);
+
+  const handlerSaveAddress = () => {
+    login({
+      address: address.map((a: any) => ({
+        ...a,
+        default: a.id === selected?.id,
+      })),
+    }).then((data: any) => {
+      const { success } = data;
+      success && fetchAdress && fetchAdress();
+    });
+  };
+
   return (
     <div className="text-15px h-full flex flex-col justify-between -mt-4 md:mt-0">
       <RadioGroup
@@ -46,7 +73,7 @@ const AddressGrid: React.FC<{ address?: any }> = ({ address }) => {
                 as="div"
                 className="text-skin-muted leading-6"
               >
-                {formatAddress(item?.address)}
+                {item?.address?.formatted_address}
               </RadioGroup.Description>
               <div className="flex absolute end-3 top-3 z-10 lg:opacity-0 transition-all address__actions">
                 <button
@@ -74,7 +101,13 @@ const AddressGrid: React.FC<{ address?: any }> = ({ address }) => {
       </RadioGroup>
 
       <div className="flex sm:justify-end mt-5 md:mt-10 lg:mt-20 save-change-button">
-        <Button className="w-full sm:w-auto">{t('button-save-changes')}</Button>
+        <Button
+          onClick={handlerSaveAddress}
+          loading={isLoading}
+          className="w-full sm:w-auto"
+        >
+          {t('button-save-changes')}
+        </Button>
       </div>
     </div>
   );
