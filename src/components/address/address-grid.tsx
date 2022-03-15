@@ -28,8 +28,6 @@ const AddressGrid: React.FC<{ address?: any; fetchAdress?: () => void }> = ({
       },
     });
   }
-  console.log(address, 'address');
-
 
   const [selected, setSelected] = useState(address[0]);
 

@@ -3,7 +3,8 @@ import { USFlag } from '@components/icons/language/USFlag';
 
 export const siteSettings = {
   name: 'FreshFare',
-  description: 'Buy Groceries with the best price available.',
+  description:
+    'We offers high-quality foods and the best delivery service, and the food market you can blindly trust',
   author: {
     name: 'Fresh Fare',
     websiteUrl: 'https://fresh-fare.vercel.app',

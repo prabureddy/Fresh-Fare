@@ -8,6 +8,7 @@ import { CheckoutCardFooterItem } from './checkout-card-footer-item';
 import { useTranslation } from 'next-i18next';
 import Router from 'next/router';
 import { ROUTES } from '@utils/routes';
+import { useLocalStorage } from '@utils/use-local-storage';
 
 const CheckoutCard: React.FC = () => {
   const { t } = useTranslation('common');
@@ -17,7 +18,7 @@ const CheckoutCard: React.FC = () => {
     currencyCode: 'INR',
   });
   function orderHeader() {
-    !isEmpty && Router.push(ROUTES.ORDER);
+    // !isEmpty && Router.push(ROUTES.ORDER);
   }
   const checkoutFooter = [
     {
@@ -52,7 +53,7 @@ const CheckoutCard: React.FC = () => {
         {checkoutFooter.map((item: any) => (
           <CheckoutCardFooterItem item={item} key={item.id} />
         ))}
-        <Button
+        {/* <Button
           variant="formButton"
           className={`w-full mt-8 mb-5 bg-skin-primary text-skin-inverted rounded font-semibold px-4 py-3 transition-all ${
             isEmpty && 'opacity-40 cursor-not-allowed'
@@ -60,7 +61,7 @@ const CheckoutCard: React.FC = () => {
           onClick={orderHeader}
         >
           {t('button-order-now')}
-        </Button>
+        </Button> */}
       </div>
       <Text className="mt-8">
         {t('text-by-placing-your-order')}{' '}
@@ -77,7 +78,7 @@ const CheckoutCard: React.FC = () => {
         </Link>
         . {t('text-credit-debit')}
       </Text>
-      <Text className="mt-4">{t('text-bag-fee')}</Text>
+      {/* <Text className="mt-4">{t('text-bag-fee')}</Text> */}
     </>
   );
 };

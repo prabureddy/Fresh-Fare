@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Input from '@components/ui/form/input';
 import PasswordInput from '@components/ui/form/password-input';
 import Button from '@components/ui/button';
@@ -10,20 +11,28 @@ import {
 import { useTranslation } from 'next-i18next';
 import Switch from '@components/ui/switch';
 import Text from '@components/ui/text';
+import { useDetailsQuery } from '@framework/customer/details';
 
 const defaultValues = {};
 
 const AccountDetails: React.FC = () => {
   const { mutate: updateUser, isLoading } = useUpdateUserMutation();
+  const { data } = useDetailsQuery();
   const { t } = useTranslation();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
     control,
   } = useForm<UpdateUserType>({
     defaultValues,
   });
+  useEffect(() => {
+    if (data) {
+      reset(data);
+    }
+  }, [data]);
   function onSubmit(input: UpdateUserType) {
     updateUser(input);
   }

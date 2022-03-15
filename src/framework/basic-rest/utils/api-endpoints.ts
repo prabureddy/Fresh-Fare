@@ -23,6 +23,8 @@ export const API_ENDPOINTS = {
   ORDER_STATUS: '/order-status.json',
   ADDRESS: '/address',
   SAVE_ADDRESS: '/save-address',
+  SAVE_PERSONAL_DETAILS: '/save-personal-details',
+  PERSONAL_DETAILS: '/personal-details',
   PAYMENT: '/payment.json',
   CONTACT: '/contact.json',
   SHOP: '/shop.json',

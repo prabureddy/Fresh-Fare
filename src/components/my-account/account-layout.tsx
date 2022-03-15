@@ -12,11 +12,11 @@ import NoticeIcon from '@components/icons/account-notice';
 import { IoSettingsOutline } from 'react-icons/io5';
 
 const accountMenu = [
-  // {
-  //   slug: ROUTES.ACCOUNT_SETTING,
-  //   name: 'account-settings',
-  //   icon: <SettingsIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />,
-  // },
+  {
+    slug: ROUTES.ACCOUNT_SETTING,
+    name: 'account-settings',
+    icon: <SettingsIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />,
+  },
   {
     slug: ROUTES.ORDERS,
     name: 'text-orders',

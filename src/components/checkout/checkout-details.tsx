@@ -20,20 +20,20 @@ const data = [
   //   title: 'text-delivery-schedule',
   //   component: <DeliverySchedule />,
   // },
-  {
-    id: 3,
-    title: 'text-contact-number',
-    component: <Contact />,
-  },
   // {
-  //   id: 4,
-  //   title: 'text-payment-option',
-  //   component: <StripeCheckoutInlineForm />,
+  //   id: 3,
+  //   title: 'text-contact-number',
+  //   component: <Contact />,
   // },
   {
     id: 5,
     title: 'text-delivery-instructions',
     component: <DeliveryNotes />,
+  },
+  {
+    id: 4,
+    title: 'text-payment-option',
+    component: <StripeCheckoutInlineForm />,
   },
   // {
   //   id: 6,

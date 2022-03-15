@@ -2,6 +2,8 @@ import TextArea from '@components/ui/form/text-area';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'next-i18next';
 import Text from '@components/ui/text';
+import { useCart } from '@contexts/cart/cart.context';
+import { useLocalStorage } from '@utils/use-local-storage';
 
 interface ContactFormValues {
   instructionNote: string;
@@ -10,14 +12,17 @@ interface ContactFormValues {
 
 const DeliveryInstructions: React.FC<{ data?: any }> = ({ data }) => {
   const { t } = useTranslation();
+  const [instruction, setInstruction] = useLocalStorage(
+    'freshfare-delivery-instruction',
+    ''
+  );
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<ContactFormValues>({
     defaultValues: {
-      instructionNote: data || '',
-      default: data || false,
+      instructionNote: instruction || '',
     },
   });
 
@@ -35,9 +40,10 @@ const DeliveryInstructions: React.FC<{ data?: any }> = ({ data }) => {
               inputClassName="focus:border-2 focus:outline-none focus:border-skin-primary"
               label="forms:label-delivery-instructions-note"
               {...register('instructionNote')}
+              onChange={(e) => setInstruction(e.target.value)}
             />
           </div>
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <input
               id="default-type"
               type="checkbox"
@@ -53,7 +59,7 @@ const DeliveryInstructions: React.FC<{ data?: any }> = ({ data }) => {
             <Text className="ms-8 pt-2.5" variant="small">
               {t('common:text-selecting-this-option')}
             </Text>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>

@@ -1,4 +1,8 @@
 import { useMutation } from 'react-query';
+import http from '@framework/utils/http';
+import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
+import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 
 export interface UpdateUserType {
   firstName: string;
@@ -13,15 +17,46 @@ export interface UpdateUserType {
   setAdsPerformance: boolean;
 }
 async function updateUser(input: UpdateUserType) {
-  return input;
+  return new Promise(async (res, rej) => {
+    http
+      .post(`${API_ENDPOINTS.SAVE_PERSONAL_DETAILS}`, {
+        ...input,
+        email: Cookies.get('auth_token'),
+      })
+      .then(({ data: { success } }: any) => {
+        if (!success) return rej('Invalid Credientials');
+        return res({
+          success: true,
+        });
+      })
+      .catch(({ error }) => {
+        return rej(error);
+      });
+  });
 }
 export const useUpdateUserMutation = () => {
   return useMutation((input: UpdateUserType) => updateUser(input), {
     onSuccess: (data) => {
-      console.log(data, 'UpdateUser success response');
+      toast('Details Successfully Saved', {
+        progressClassName: 'fancy-progress-bar',
+        position: 'bottom-right',
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     },
-    onError: (data) => {
-      console.log(data, 'UpdateUser error response');
+    onError: (error: string) => {
+      toast(error, {
+        progressClassName: 'fancy-progress-bar',
+        position: 'bottom-right',
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     },
   });
 };
