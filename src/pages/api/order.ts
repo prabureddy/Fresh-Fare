@@ -14,9 +14,6 @@ const handler = async (req: any, res: any) => {
       email,
     },
   });
-  console.log('emor', email, orderId);
-  console.log('qwerty', data);
-
   const order = (data as []).find((o: any) => o.order.orderId === orderId);
   if (!order) {
     return res.status(200).json({ error: 'Order Not found!', success: false });
