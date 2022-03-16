@@ -118,7 +118,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
                   required: `${t('forms:password-required')}`,
                 })}
               />
-              <div className="flex items-center justify-center">
+              {/* <div className="flex items-center justify-center">
                 <div className="flex items-center flex-shrink-0">
                   <label className="switch relative inline-block w-10 cursor-pointer">
                     <Switch checked={remember} onChange={setRemember} />
@@ -139,7 +139,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
                     {t('common:text-forgot-password')}
                   </button>
                 </div>
-              </div>
+              </div> */}
               <div className="relative">
                 <Button
                   type="submit"

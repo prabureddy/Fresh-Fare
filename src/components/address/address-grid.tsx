@@ -3,10 +3,10 @@ import { TiPencil } from 'react-icons/ti';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { RadioGroup } from '@headlessui/react';
 import { useModalAction } from '@components/common/modal/modal.context';
-import { formatAddress } from '@utils/format-address';
 import Button from '@components/ui/button';
 import { useTranslation } from 'next-i18next';
 import { useAddressMutation } from '../../framework/basic-rest/address/use-address';
+import { useLocalStorage } from '@utils/use-local-storage';
 
 const AddressGrid: React.FC<{ address?: any; fetchAdress?: () => void }> = ({
   address,
@@ -15,6 +15,9 @@ const AddressGrid: React.FC<{ address?: any; fetchAdress?: () => void }> = ({
   const { t } = useTranslation('common');
   const { openModal } = useModalAction();
   const { mutateAsync: login, isLoading } = useAddressMutation();
+  const [selectedAddress, updateSelectedAddress] = useLocalStorage(
+    'freshfare-selected-address'
+  );
   address = address || [];
 
   function handlePopupView(item: any) {
@@ -29,7 +32,7 @@ const AddressGrid: React.FC<{ address?: any; fetchAdress?: () => void }> = ({
     });
   }
 
-  const [selected, setSelected] = useState(address[0]);
+  const [selected, setSelected] = useState(selectedAddress || address[0]);
 
   const handlerSaveAddress = () => {
     login({
@@ -43,11 +46,16 @@ const AddressGrid: React.FC<{ address?: any; fetchAdress?: () => void }> = ({
     });
   };
 
+  const handlerOnChangeSelectedAddress = (e: any) => {
+    setSelected(e);
+    updateSelectedAddress(e);
+  };
+
   return (
     <div className="text-15px h-full flex flex-col justify-between -mt-4 md:mt-0">
       <RadioGroup
         value={selected}
-        onChange={setSelected}
+        onChange={handlerOnChangeSelectedAddress}
         className="md:grid md:grid-cols-2 md:gap-5 auto-rows-auto space-y-4 md:space-y-0"
       >
         <RadioGroup.Label className="sr-only">{t('address')}</RadioGroup.Label>

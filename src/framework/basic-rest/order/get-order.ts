@@ -10,9 +10,9 @@ export const fetchOrder = async (_id: string) => {
     orderId: _id,
   });
   const { order: rawDetails } = data;
-  const { order, ...personalDetails } = rawDetails;
+  const { order, ...personalDetails } = rawDetails || {};
   const { email } = personalDetails;
-  const { orderId, items, total, createdAt , instruction} = order;
+  const { orderId, items, total, createdAt , instruction} = order || {};
   const modifiedOrder: Order = {
     customer: {
       email,

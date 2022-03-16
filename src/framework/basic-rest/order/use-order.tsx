@@ -25,7 +25,7 @@ async function updateOrder(input: any) {
 export const useUpdateOrderMutation = () => {
   return useMutation((input: any) => updateOrder(input), {
     onSuccess: (data) => {
-      toast('Order Successfully Saved', {
+      toast('Order Successfully Created', {
         progressClassName: 'fancy-progress-bar',
         position: 'bottom-right',
         autoClose: 1500,

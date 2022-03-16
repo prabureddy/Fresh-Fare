@@ -121,28 +121,28 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
                   required: `${t('forms:password-required')}`,
                 })}
               />
-              <div className="flex items-center justify-center">
-                <div className="flex items-center flex-shrink-0">
-                  <label className="switch relative inline-block w-10 cursor-pointer">
-                    <Switch checked={remember} onChange={setRemember} />
-                  </label>
+                {/* <div className="flex items-center justify-center">
+                  <div className="flex items-center flex-shrink-0">
+                    <label className="switch relative inline-block w-10 cursor-pointer">
+                      <Switch checked={remember} onChange={setRemember} />
+                    </label>
 
-                  <label
-                    htmlFor="remember"
-                    className="flex-shrink-0 text-sm text-heading ps-5 mt-1 cursor-pointer"
-                  >
-                    {t('forms:label-remember-me')}
-                  </label>
-                </div>
-                <div className="flex ms-auto mt-[2px]" onClick={closeModal}>
-                  <Link
-                    href={ROUTES.PRIVACY}
-                    className="text-end text-sm text-heading ps-3 hover:no-underline hover:text-skin-base focus:outline-none focus:text-skin-base"
-                  >
-                    {t('common:text-privacy-and-policy')}
-                  </Link>
-                </div>
-              </div>
+                    <label
+                      htmlFor="remember"
+                      className="flex-shrink-0 text-sm text-heading ps-5 mt-1 cursor-pointer"
+                    >
+                      {t('forms:label-remember-me')}
+                    </label>
+                  </div>
+                  <div className="flex ms-auto mt-[2px]" onClick={closeModal}>
+                    <Link
+                      href={ROUTES.PRIVACY}
+                      className="text-end text-sm text-heading ps-3 hover:no-underline hover:text-skin-base focus:outline-none focus:text-skin-base"
+                    >
+                      {t('common:text-privacy-and-policy')}
+                    </Link>
+                  </div>
+                </div> */}
               <div className="relative">
                 <Button
                   type="submit"

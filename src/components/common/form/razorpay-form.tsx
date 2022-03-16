@@ -17,10 +17,11 @@ const RazorpayForm = ({
 }) => {
   const { data: personalDetails } = useDetailsQuery();
   const [instruction = ''] = useLocalStorage('freshfare-delivery-instruction');
+  const [selectedAddress]: any = useLocalStorage('freshfare-selected-address');
   const { mutateAsync: saveOrder } = useUpdateOrderMutation();
-  const { total, items, totalItems, totalUniqueItems, resetCart, isEmpty } =
-    useCart();
+  const { total, items, totalItems, totalUniqueItems, resetCart } = useCart();
   const PRICE = (price as any) * 100;
+  console.log(instruction);
 
   //   const order = await createOrder(params);
   const options: any = useMemo(
@@ -38,7 +39,12 @@ const RazorpayForm = ({
         await saveOrder({
           orderId,
           paymentId,
-          instruction,
+          instruction: JSON.parse(
+            localStorage.getItem('freshfare-delivery-instruction') as string
+          ),
+          address:
+            JSON.parse(localStorage.getItem('freshfare-selected-address') as string) ||
+            '',
           total: total * 10,
           items: items.map((i) => ({
             ...i,
@@ -57,7 +63,7 @@ const RazorpayForm = ({
         contact: personalDetails?.phoneNumber,
       },
     }),
-    [personalDetails]
+    [personalDetails, instruction, selectedAddress]
   );
   const rzp1 =
     typeof window === 'undefined'

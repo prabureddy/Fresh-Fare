@@ -14,6 +14,7 @@ const handler = async (req: any, res: any) => {
     totalItems = 0,
     totalUniqueItems = 0,
     instruction = '',
+    address = {},
   } = req.body;
   if (!(email && orderId && paymentId)) {
     return res.status(400).json({ error: 'Bad request' });
@@ -40,6 +41,7 @@ const handler = async (req: any, res: any) => {
         paymentId,
         total,
         instruction,
+        address,
         items,
         totalItems,
         totalUniqueItems,
