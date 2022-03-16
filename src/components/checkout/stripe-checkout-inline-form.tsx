@@ -1,3 +1,4 @@
+import RazorpayForm from '@components/common/form/razorpay-form';
 import StripePaymentForm from '@components/common/form/stripe-inline-form';
 import { useCart } from '@contexts/cart/cart.context';
 import { useTranslation } from 'next-i18next';
@@ -7,7 +8,9 @@ const StripeCheckoutInlineForm = () => {
   const { t } = useTranslation();
   const { total } = useCart();
   return (
-    <StripePaymentForm item={{ price: total, buttonText: t('text-pay-now') }} />
+    <RazorpayForm
+      item={{ price: (total * 10).toFixed(2), buttonText: t('text-pay-now') }}
+    />
   );
 };
 

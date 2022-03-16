@@ -92,17 +92,19 @@ export type OrderItem = {
 };
 export type Order = {
   id: string | number;
-  name: string;
-  slug: string;
+  name?: string;
+  slug?: string;
+  instruction?: string;
   products: OrderItem[];
   total: number;
-  tracking_number: string;
+  tracking_number?: string;
   customer: {
-    id: number;
+    id?: number;
     email: string;
   };
-  shipping_fee: number;
+  shipping_fee?: number;
   payment_gateway: string;
+  createdAt: string;
 };
 
 export type ShopsQueryOptionsType = {

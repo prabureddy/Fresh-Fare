@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 import Heading from '@components/ui/heading';
 const OrderItemCard = ({ product }: { product: OrderItem }) => {
   const { price: itemTotal } = usePrice({
-    amount: product.price * product.quantity,
+    amount: (product.price * product.quantity) / 10,
     currencyCode: 'INR',
   });
   return (
@@ -21,34 +21,32 @@ const OrderItemCard = ({ product }: { product: OrderItem }) => {
     </tr>
   );
 };
-const OrderDetails: React.FC<{ className?: string }> = ({
-  className = 'pt-10 lg:pt-12',
-}) => {
+const OrderDetails: React.FC<{
+  className?: string;
+  order: any;
+  isLoading: boolean;
+}> = ({ className = 'pt-10 lg:pt-12', order = {}, isLoading = true }) => {
   const { t } = useTranslation('common');
-  const {
-    query: { id },
-  } = useRouter();
-  const { data: order, isLoading } = useOrderQuery(id?.toString()!);
-  const { price: subtotal } = usePrice(
-    order && {
-      amount: order.total,
-      currencyCode: 'INR',
-    }
-  );
+  // const { price: subtotal } = usePrice(
+  //   order && {
+  //     amount: order.total / 10,
+  //     currencyCode: 'INR',
+  //   }
+  // );
   const { price: total } = usePrice(
     order && {
-      amount: order.shipping_fee
-        ? order.total + order.shipping_fee
-        : order.total,
+      amount:
+        (order.shipping_fee ? order.total + order.shipping_fee : order.total) /
+        10,
       currencyCode: 'INR',
     }
   );
-  const { price: shipping } = usePrice(
-    order && {
-      amount: order.shipping_fee,
-      currencyCode: 'INR',
-    }
-  );
+  // const { price: shipping } = usePrice(
+  //   order && {
+  //     amount: order.shipping_fee / 10,
+  //     currencyCode: 'INR',
+  //   }
+  // );
   if (isLoading) return <p>Loading...</p>;
 
   return (
@@ -68,12 +66,12 @@ const OrderDetails: React.FC<{ className?: string }> = ({
           </tr>
         </thead>
         <tbody>
-          {order?.products.map((product, index) => (
+          {order?.products?.map((product: any, index: number) => (
             <OrderItemCard key={index} product={product} />
           ))}
         </tbody>
         <tfoot>
-          <tr className="odd:bg-skin-secondary">
+          {/* <tr className="odd:bg-skin-secondary">
             <td className="p-4 italic">{t('text-sub-total')}:</td>
             <td className="p-4">{subtotal}</td>
           </tr>
@@ -85,7 +83,7 @@ const OrderDetails: React.FC<{ className?: string }> = ({
                 via Flat rate
               </span>
             </td>
-          </tr>
+          </tr> */}
           <tr className="odd:bg-skin-secondary">
             <td className="p-4 italic">{t('text-payment-method')}:</td>
             <td className="p-4">{order?.payment_gateway}</td>
@@ -96,7 +94,7 @@ const OrderDetails: React.FC<{ className?: string }> = ({
           </tr>
           <tr className="odd:bg-skin-secondary">
             <td className="p-4 italic">{t('text-note')}:</td>
-            <td className="p-4">{t('text-new-order')}</td>
+            <td className="p-4">{order?.instruction}</td>
           </tr>
         </tfoot>
       </table>

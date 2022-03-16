@@ -29,6 +29,7 @@ export default class CustomDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script defer src="https://checkout.razorpay.com/v1/checkout.js" />
         </body>
       </Html>
     );

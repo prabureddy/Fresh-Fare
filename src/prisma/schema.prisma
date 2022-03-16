@@ -3,7 +3,7 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
+  previewFeatures = ["mongoDb", "filterJson"]
 }
 
 datasource db {
@@ -51,14 +51,23 @@ datasource db {
 // }
 
 model User {
-  id              String  @id @default(auto()) @map("_id") @db.ObjectId
-  name            String?
-  email           String?
-  password        String?
-  firstName       String?
-  lastName        String?
-  phoneNumber     String?
-  address         Json?
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String?
+  email       String?
+  password    String?
+  firstName   String?
+  lastName    String?
+  phoneNumber String?
+  address     Json?
+}
+
+model Order {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String?
+  order Json?
+  firstName String?
+  lastName String?
+  phoneNumber String?
 }
 
 model Product {
@@ -106,12 +115,12 @@ model Product {
 //   Order    Order[]
 // }
 
-model Order {
-  id              String @id @default(auto()) @map("_id") @db.ObjectId
-  name            String
-  slug            String
-  products        Json[]
-  toal            Int
-  tracking_number String
-  customer        Json
-}
+// model Order {
+//   id              String @id @default(auto()) @map("_id") @db.ObjectId
+//   name            String
+//   slug            String
+//   products        Json[]
+//   toal            Int
+//   tracking_number String
+//   customer        Json
+// }

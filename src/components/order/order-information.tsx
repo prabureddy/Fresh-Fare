@@ -1,19 +1,17 @@
 import { IoCheckmarkCircle } from 'react-icons/io5';
 import OrderDetails from '@components/order/order-details';
 import { useOrderQuery } from '@framework/order/get-order';
-import { useRouter } from 'next/router';
 import usePrice from '@framework/product/use-price';
 import { useTranslation } from 'next-i18next';
 
-export default function OrderInformation() {
-  const {
-    query: { id },
-  } = useRouter();
+export default function OrderInformation({ id }: { id: string }) {
   const { t } = useTranslation('common');
   const { data, isLoading } = useOrderQuery(id?.toString()!);
+
   const { price: total } = usePrice(
     data && {
-      amount: data.shipping_fee ? data.total + data.shipping_fee : data.total,
+      amount:
+        (data.shipping_fee ? data.total + data.shipping_fee : data.total) / 10,
       currencyCode: 'INR',
     }
   );
@@ -32,13 +30,14 @@ export default function OrderInformation() {
           <span className="uppercase text-xs block text-skin-muted font-normal leading-5">
             {t('text-order-number')}:
           </span>
-          {data?.tracking_number}
+          {data?.id}
         </li>
         <li className="text-skin-base font-semibold text-base lg:text-lg border-b md:border-b-0 md:border-r border-dashed border-gray-300 px-4 lg:px-6 xl:px-8 py-4 md:py-5 lg:py-6 last:border-0">
           <span className="uppercase text-[11px] block text-skin-muted font-normal leading-5">
             {t('text-date')}:
           </span>
-          April 22, 2021
+          {data?.createdAt &&
+            new Date(data?.createdAt as string).toString().slice(0, 15)}
         </li>
         <li className="text-skin-base font-semibold text-base lg:text-lg border-b md:border-b-0 md:border-r border-dashed border-gray-300 px-4 lg:px-6 xl:px-8 py-4 md:py-5 lg:py-6 last:border-0">
           <span className="uppercase text-[11px] block text-skin-muted font-normal leading-5">
@@ -60,11 +59,11 @@ export default function OrderInformation() {
         </li>
       </ul>
 
-      <p className="text-skin-base text-sm md:text-base mb-8">
+      {/* <p className="text-skin-base text-sm md:text-base mb-8">
         {t('text-pay-cash')}
-      </p>
+      </p> */}
 
-      <OrderDetails />
+      <OrderDetails order={data} isLoading={isLoading} />
     </div>
   );
 }
