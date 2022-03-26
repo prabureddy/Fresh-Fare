@@ -2,15 +2,15 @@
   "env": {
     "NEXT_PUBLIC_REST_API_ENDPOINT": "http://localhost:3000/api",
     "NEXT_PUBLIC_SITE_URL": "http://localhost:3000",
-    "NEXT_PUBLIC_RAZORPAY_KEY": "rzp_test_2spCauOd4i03Oy",
-    "RAZORPAY_SECRET": "nIHz0UvtSrRzCTBXTR559s1D"
+    "NEXT_PUBLIC_RAZORPAY_KEY": "rzp_test_4yFx4hc92x0DvA",
+    "RAZORPAY_SECRET": "YpJJCv0RiufHt2VhpTqhhpMy"
   },
   "build": {
     "env": {
       "NEXT_PUBLIC_REST_API_ENDPOINT": "https://fresh-fare.vercel.app/api",
       "NEXT_PUBLIC_SITE_URL": "https://fresh-fare.vercel.app",
-      "NEXT_PUBLIC_RAZORPAY_KEY": "rzp_test_2spCauOd4i03Oy",
-      "RAZORPAY_SECRET": "nIHz0UvtSrRzCTBXTR559s1D"
+      "NEXT_PUBLIC_RAZORPAY_KEY": "rzp_test_4yFx4hc92x0DvA",
+      "RAZORPAY_SECRET": "YpJJCv0RiufHt2VhpTqhhpMy"
     }
   }
 }
