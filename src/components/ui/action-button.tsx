@@ -42,9 +42,9 @@ const ActionsButton: React.FC<{ item?: any }> = ({ item }) => {
                 >
                   Order Details
                 </div>
-                <div className="text-[14px] whitespace-nowrap text-[#F35C5C] py-2 px-5 hover:bg-[#F6F9FC] transition-all cursor-pointer">
+                {/* <div className="text-[14px] whitespace-nowrap text-[#F35C5C] py-2 px-5 hover:bg-[#F6F9FC] transition-all cursor-pointer">
                   Cancel Order
-                </div>
+                </div> */}
               </Popover.Panel>
             </Transition>
           </>

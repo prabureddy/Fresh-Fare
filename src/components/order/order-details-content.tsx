@@ -3,7 +3,7 @@ import Image from '@components/ui/image';
 
 export const OrderDetailsContent: React.FC<{ item?: any }> = ({ item }) => {
   const { price } = usePrice({
-    amount: item.price,
+    amount: item.price / 10,
     currencyCode: 'INR',
   });
   return (

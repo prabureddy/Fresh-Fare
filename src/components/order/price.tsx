@@ -3,9 +3,7 @@ import { calculateTotal } from '@contexts/cart/cart.utils';
 
 export const TotalPrice: React.FC<{ items?: any }> = ({ items }) => {
   const { price } = usePrice({
-    amount: Math.round(
-      calculateTotal(items?.products) + items?.delivery_fee - items?.discount
-    ),
+    amount: Math.round(items.total) / 10,
     currencyCode: 'INR',
   });
   return <span className="total_price">{price}</span>;
@@ -13,7 +11,7 @@ export const TotalPrice: React.FC<{ items?: any }> = ({ items }) => {
 
 export const DiscountPrice = (discount: any) => {
   const { price } = usePrice({
-    amount: discount?.discount,
+    amount: discount?.discount / 10,
     currencyCode: 'INR',
   });
   return <>-{price}</>;
@@ -29,7 +27,7 @@ export const DeliveryFee = (delivery: any) => {
 
 export const SubTotalPrice: React.FC<{ items?: any }> = ({ items }) => {
   const { price } = usePrice({
-    amount: calculateTotal(items),
+    amount: calculateTotal(items) / 10,
     currencyCode: 'INR',
   });
   return <>{price}</>;

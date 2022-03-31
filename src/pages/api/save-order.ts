@@ -42,6 +42,7 @@ const handler = async (req: any, res: any) => {
         total,
         instruction,
         address,
+        trackingNo: `#${Math.random().toString(16).slice(2)}`,
         items,
         totalItems,
         totalUniqueItems,

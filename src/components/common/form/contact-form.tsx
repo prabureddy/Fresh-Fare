@@ -3,6 +3,7 @@ import Button from '@components/ui/button';
 import TextArea from '@components/ui/form/text-area';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { useMessageMutation } from '@framework/message/message';
 
 interface ContactFormValues {
   name: string;
@@ -18,8 +19,11 @@ const ContactForm: React.FC = () => {
     formState: { errors },
   } = useForm<ContactFormValues>();
 
+  const { mutate } = useMessageMutation();
+
   function onSubmit(values: ContactFormValues) {
     console.log(values, 'Contact');
+    mutate(values);
   }
 
   const { t } = useTranslation();

@@ -18,7 +18,7 @@ export const API_ENDPOINTS = {
   POPCORN_JERKY_PRODUCTS: '/products_popcorn_jerky.json',
   FRESH_VEGETABLES_PRODUCTS: '/products_fresh_vegetables.json',
   SEARCH: '/search',
-  ORDERS: '/orders.json',
+  ORDERS: '/orders',
   ORDER: '/order',
   SAVE_ORDER: '/save-order',
   ORDER_STATUS: '/order-status.json',
@@ -31,4 +31,5 @@ export const API_ENDPOINTS = {
   SHOP: '/shop.json',
   SHOPS: '/shops.json',
   WISHLIST: '/wishlist.json',
+  MESSAGE: '/message',
 };

@@ -36,7 +36,13 @@ export const Status: React.FC<{ item?: any }> = ({ item }) => {
 
 const columns = [
   {
-    title: 'Order Number',
+    title: 'Order Id',
+    dataIndex: 'orderId',
+    key: 'orderId',
+    className: 'id-cell',
+  },
+  {
+    title: 'Tracking Number',
     dataIndex: 'tracking_number',
     key: 'tracking_number',
     className: 'id-cell',
@@ -49,18 +55,18 @@ const columns = [
       return <CreatedAt createdAt={items} />;
     },
   },
-  {
-    title: 'Status',
-    key: 'status',
-    render: function status(item: any) {
-      return <Status item={item} />;
-    },
-  },
-  {
-    title: 'Delivery Time',
-    dataIndex: 'delivery_time',
-    key: 'delivery_time',
-  },
+  // {
+  //   title: 'Status',
+  //   key: 'status',
+  //   render: function status(item: any) {
+  //     return <Status item={item} />;
+  //   },
+  // },
+  // {
+  //   title: 'Delivery Time',
+  //   dataIndex: 'delivery_time',
+  //   key: 'delivery_time',
+  // },
   {
     title: 'Total Price',
     key: 'total',
@@ -78,11 +84,11 @@ const columns = [
   },
 ];
 
-const OrderTable: React.FC<{ orders?: any }> = ({ orders }) => {
+const OrderTable: React.FC<{ orders?: any }> = ({ orders = [] }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [value, setValue] = useState('');
   const countPerPage = 5;
-  let [filterData, setDataValue] = useState(orders.slice(0, countPerPage));
+  let [filterData, setDataValue] = useState(orders?.slice(0, countPerPage) || []);
 
   const updatePage = (p: any) => {
     setCurrentPage(p);
@@ -95,7 +101,7 @@ const OrderTable: React.FC<{ orders?: any }> = ({ orders }) => {
     setCurrentPage(1);
     let filter: any = orders
       .filter((item: any) =>
-        item.tracking_number
+        item.orderId
           .toLowerCase()
           .includes(e.target.value.toLowerCase())
       )

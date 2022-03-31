@@ -6,7 +6,7 @@ export default function OrdersTablePage() {
   const { data, isLoading } = useOrdersQuery({});
   return (
     <div className="pt-4">
-      {!isLoading ? <OrderTable orders={data?.data} /> : <div>Loading...</div>}
+      {!isLoading ? <OrderTable orders={data?.data?.orders || []} /> : <div>Loading...</div>}
     </div>
   );
 }
