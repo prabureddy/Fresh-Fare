@@ -14,6 +14,9 @@ const handler = async (req: any, res: any) => {
       email,
     },
   });
+  console.log('data');
+  console.log(data);
+  
   res.status(200).json({
     success: true,
     orders: data.map((o: any) => {
@@ -26,12 +29,15 @@ const handler = async (req: any, res: any) => {
         trackingNo = '',
         items = [],
       } = o.order;
+      console.log('created_at');
+      console.log(createdAt);
+      
       return {
         id: o.id,
         orderId,
         tracking_number: trackingNo,
         total: total.toFixed(2),
-        created_at: createdAt,
+        created_at: String(createdAt),
         instruction,
         products: items.map((i: any) => {
           return {

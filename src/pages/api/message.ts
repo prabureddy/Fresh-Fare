@@ -11,7 +11,8 @@ const handler = async (req: any, res: any) => {
   }
   await prisma.message.create({
     data: {
-      message
+      message,
+      createdAt: new Date().toISOString(),
     },
   });
   res.status(200).json({ success: true });

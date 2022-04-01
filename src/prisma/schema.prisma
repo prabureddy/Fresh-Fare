@@ -59,7 +59,7 @@ model User {
   lastName    String?
   phoneNumber String?
   address     Json?
-  createdAt   DateTime @default(now())
+  createdAt   String
 }
 
 model Order {
@@ -69,13 +69,13 @@ model Order {
   firstName   String?
   lastName    String?
   phoneNumber String?
-  createdAt   DateTime @default(now())
+  createdAt   String
 }
 
 model Message {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   message   Json
-  createdAt DateTime @default(now())
+  createdAt String
 }
 
 model Product {

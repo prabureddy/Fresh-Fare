@@ -25,6 +25,7 @@ const handler = async (req: any, res: any) => {
       email,
       password,
       name,
+      createdAt: new Date().toISOString(),
     },
   });
   res.status(200).json({ success: true });

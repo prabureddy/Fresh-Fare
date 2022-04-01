@@ -36,6 +36,7 @@ const handler = async (req: any, res: any) => {
       firstName,
       lastName,
       phoneNumber,
+      createdAt: new Date().toISOString(),
       order: {
         orderId,
         paymentId,
