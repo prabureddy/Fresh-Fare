@@ -221,7 +221,7 @@
       "variations": [
         {
           "id": 1,
-          "value": "12oz",
+          "value": "12gm",
           "attribute": {
             "id": 1,
             "name": "Available in",
@@ -230,7 +230,7 @@
         },
         {
           "id": 2,
-          "value": "24oz",
+          "value": "24gm",
           "attribute": {
             "id": 1,
             "name": "Available in",
@@ -239,7 +239,7 @@
         },
         {
           "id": 3,
-          "value": "36oz",
+          "value": "36gm",
           "attribute": {
             "id": 1,
             "name": "Available in",
@@ -278,7 +278,7 @@
       "quantity": 70,
       "price": 3.46,
       "sale_price": 3.46,
-      "unit": "5.5 oz",
+      "unit": "5.5 gm",
       "tag": [
         {
           "id": 1,

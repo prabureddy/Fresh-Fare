@@ -167,7 +167,7 @@
       {
         "id": 8,
         "attribute_id": 3,
-        "value": "12oz",
+        "value": "12gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -176,17 +176,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -194,7 +194,7 @@
       {
         "id": 9,
         "attribute_id": 3,
-        "value": "24oz",
+        "value": "24gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -203,17 +203,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -221,7 +221,7 @@
       {
         "id": 10,
         "attribute_id": 3,
-        "value": "36oz",
+        "value": "36gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -230,17 +230,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -249,7 +249,7 @@
     "variation_options": [
       {
         "id": 247,
-        "title": "12oz",
+        "title": "12gm",
         "price": 35,
         "sale_price": null,
         "quantity": "10",
@@ -258,13 +258,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "12oz"
+            "value": "12gm"
           }
         ]
       },
       {
         "id": 248,
-        "title": "24oz",
+        "title": "24gm",
         "price": 35,
         "sale_price": 25,
         "quantity": "35",
@@ -273,13 +273,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "24oz"
+            "value": "24gm"
           }
         ]
       },
       {
         "id": 249,
-        "title": "36oz",
+        "title": "36gm",
         "price": 40,
         "sale_price": null,
         "quantity": "25",
@@ -288,7 +288,7 @@
         "options": [
           {
             "name": "Available In",
-            "value": "36oz"
+            "value": "36gm"
           }
         ]
       }
@@ -457,7 +457,7 @@
       {
         "id": 8,
         "attribute_id": 3,
-        "value": "12oz",
+        "value": "12gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -466,17 +466,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -484,7 +484,7 @@
       {
         "id": 9,
         "attribute_id": 3,
-        "value": "24oz",
+        "value": "24gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -493,17 +493,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -511,7 +511,7 @@
       {
         "id": 10,
         "attribute_id": 3,
-        "value": "36oz",
+        "value": "36gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -520,17 +520,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -539,7 +539,7 @@
     "variation_options": [
       {
         "id": 247,
-        "title": "12oz",
+        "title": "12gm",
         "price": 2,
         "sale_price": null,
         "quantity": "10",
@@ -548,13 +548,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "12oz"
+            "value": "12gm"
           }
         ]
       },
       {
         "id": 248,
-        "title": "24oz",
+        "title": "24gm",
         "price": 4,
         "sale_price": 3.5,
         "quantity": "35",
@@ -563,13 +563,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "24oz"
+            "value": "24gm"
           }
         ]
       },
       {
         "id": 249,
-        "title": "36oz",
+        "title": "36gm",
         "price": 5,
         "sale_price": null,
         "quantity": "25",
@@ -578,7 +578,7 @@
         "options": [
           {
             "name": "Available In",
-            "value": "36oz"
+            "value": "36gm"
           }
         ]
       }
@@ -644,7 +644,7 @@
       {
         "id": 8,
         "attribute_id": 3,
-        "value": "10oz",
+        "value": "10gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -653,17 +653,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "10oz"
+              "value": "10gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "15oz"
+              "value": "15gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "20oz"
+              "value": "20gm"
             }
           ]
         }
@@ -671,7 +671,7 @@
       {
         "id": 9,
         "attribute_id": 3,
-        "value": "20oz",
+        "value": "20gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -680,17 +680,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "10oz"
+              "value": "10gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "20oz"
+              "value": "20gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "30oz"
+              "value": "30gm"
             }
           ]
         }
@@ -698,7 +698,7 @@
       {
         "id": 10,
         "attribute_id": 3,
-        "value": "30oz",
+        "value": "30gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -707,17 +707,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "10oz"
+              "value": "10gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "20oz"
+              "value": "20gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "30oz"
+              "value": "30gm"
             }
           ]
         }
@@ -726,7 +726,7 @@
     "variation_options": [
       {
         "id": 247,
-        "title": "10oz",
+        "title": "10gm",
         "price": 5,
         "sale_price": null,
         "quantity": "10",
@@ -735,13 +735,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "10oz"
+            "value": "10gm"
           }
         ]
       },
       {
         "id": 248,
-        "title": "20oz",
+        "title": "20gm",
         "price": 7,
         "sale_price": 6,
         "quantity": "35",
@@ -750,13 +750,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "20oz"
+            "value": "20gm"
           }
         ]
       },
       {
         "id": 249,
-        "title": "30oz",
+        "title": "30gm",
         "price": 8,
         "sale_price": null,
         "quantity": "25",
@@ -765,7 +765,7 @@
         "options": [
           {
             "name": "Available In",
-            "value": "30oz"
+            "value": "30gm"
           }
         ]
       }
@@ -831,7 +831,7 @@
       {
         "id": 8,
         "attribute_id": 3,
-        "value": "12oz",
+        "value": "12gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -840,17 +840,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -858,7 +858,7 @@
       {
         "id": 9,
         "attribute_id": 3,
-        "value": "24oz",
+        "value": "24gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -867,17 +867,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -885,7 +885,7 @@
       {
         "id": 10,
         "attribute_id": 3,
-        "value": "36oz",
+        "value": "36gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -894,17 +894,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -913,7 +913,7 @@
     "variation_options": [
       {
         "id": 247,
-        "title": "12oz",
+        "title": "12gm",
         "price": 35,
         "sale_price": null,
         "quantity": "10",
@@ -922,13 +922,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "12oz"
+            "value": "12gm"
           }
         ]
       },
       {
         "id": 248,
-        "title": "24oz",
+        "title": "24gm",
         "price": 35,
         "sale_price": 25,
         "quantity": "35",
@@ -937,13 +937,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "24oz"
+            "value": "24gm"
           }
         ]
       },
       {
         "id": 249,
-        "title": "36oz",
+        "title": "36gm",
         "price": 40,
         "sale_price": null,
         "quantity": "25",
@@ -952,7 +952,7 @@
         "options": [
           {
             "name": "Available In",
-            "value": "36oz"
+            "value": "36gm"
           }
         ]
       }
@@ -1018,7 +1018,7 @@
       {
         "id": 8,
         "attribute_id": 3,
-        "value": "12oz",
+        "value": "12gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -1027,17 +1027,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -1045,7 +1045,7 @@
       {
         "id": 9,
         "attribute_id": 3,
-        "value": "24oz",
+        "value": "24gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -1054,17 +1054,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -1072,7 +1072,7 @@
       {
         "id": 10,
         "attribute_id": 3,
-        "value": "36oz",
+        "value": "36gm",
         "attribute": {
           "id": 3,
           "slug": "available-in",
@@ -1081,17 +1081,17 @@
             {
               "id": 8,
               "attribute_id": 3,
-              "value": "12oz"
+              "value": "12gm"
             },
             {
               "id": 9,
               "attribute_id": 3,
-              "value": "24oz"
+              "value": "24gm"
             },
             {
               "id": 10,
               "attribute_id": 3,
-              "value": "36oz"
+              "value": "36gm"
             }
           ]
         }
@@ -1100,7 +1100,7 @@
     "variation_options": [
       {
         "id": 247,
-        "title": "12oz",
+        "title": "12gm",
         "price": 35,
         "sale_price": null,
         "quantity": "10",
@@ -1109,13 +1109,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "12oz"
+            "value": "12gm"
           }
         ]
       },
       {
         "id": 248,
-        "title": "24oz",
+        "title": "24gm",
         "price": 35,
         "sale_price": 25,
         "quantity": "35",
@@ -1124,13 +1124,13 @@
         "options": [
           {
             "name": "Available In",
-            "value": "24oz"
+            "value": "24gm"
           }
         ]
       },
       {
         "id": 249,
-        "title": "36oz",
+        "title": "36gm",
         "price": 40,
         "sale_price": null,
         "quantity": "25",
@@ -1139,7 +1139,7 @@
         "options": [
           {
             "name": "Available In",
-            "value": "36oz"
+            "value": "36gm"
           }
         ]
       }
